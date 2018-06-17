@@ -3,7 +3,18 @@ this.onload=function(){
     for(var i=0;i<divCount;i++){
         document.getElementsByClassName("center-div")[i].addEventListener("click", function(){        
             this.style.backgroundColor = getRandomColor();
-        });        
+            this.lastUpdate();
+        });   
+
+        document.getElementsByClassName("center-div")[i].originText = document.getElementsByClassName("center-div")[i].innerHTML;
+        
+        document.getElementsByClassName("center-div")[i].lastUpdate = function(){
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+' '+time;
+            this.innerHTML=this.originText+" : " + dateTime;
+        }
     }
 
     var specialCount = document.getElementsByClassName("special").length;
