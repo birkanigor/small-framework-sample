@@ -6,18 +6,19 @@ document.onclick=function(event){
         case /center-div/.test(clickedObj.className) :
             if(typeof(clickedObj.lastUpdate) =="undefined"){
                 clickedObj.originText = event.target.innerHTML;
-                clickedObj.lastUpdate = setLastUpdate;
+                clickedObj.lastUpdate = setLastUpdate;              
+                clickedObj.getLog = getDivLog;
             }
 
             clickedObj.style.backgroundColor = getRandomColor();
             clickedObj.lastUpdate(clickedObj);  
-            
+
             if(clickedObj.className.includes("special")){
                 clickedObj.style.borderWidth="5px";
                 clickedObj.style.borderColor = getRandomColor();  
             }
             break;
-        case /main-button/.test(clickedObj.className) :
+        case /main-button add/.test(clickedObj.className) :
             var newDiv = document.createElement("div");
             newDiv.className="center-div";
             var textBox = document.getElementById("person-name");
@@ -30,6 +31,22 @@ document.onclick=function(event){
             textBox.value="";  
             break;
     }
+}
+
+document.oncontextmenu = function(event){
+    var clickedObj = event.target;
+    
+    switch ( true ){
+        case /center-div/.test(clickedObj.className) :
+            console.log(clickedObj.innerHTML);
+            return false;
+        break;
+     }     
+}
+
+
+function getDivLog(obj){
+    console.log(obj.innerHTML);
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,3 +67,5 @@ function setLastUpdate(obj){
     var dateTime = date+' '+time;
     obj.innerHTML=obj.originText+" : " + dateTime;
 }
+
+
