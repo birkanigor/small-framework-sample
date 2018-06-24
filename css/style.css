@@ -1,14 +1,14 @@
-.center-div{
+div.center-div{
 top: 50%;    
     width:50%;
     height:100px;
     border: 1px solid #ccc;
     background-color: #f3f3f3;      
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
     line-height: 100px;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .main-button{
@@ -20,16 +20,34 @@ top: 50%;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 25px 2px;
     cursor: pointer;    
+    
 }
 
-input[type=text] {
-    width: 50%;
+input[type=text], input[type=number] {
+    width: 35%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+.customer-form{
+    width:15%;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+p{
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    line-height: initial;
+    margin-left: 10px;
 }

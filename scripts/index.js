@@ -21,14 +21,24 @@ document.onclick=function(event){
         case /main-button add/.test(clickedObj.className) :
             var newDiv = document.createElement("div");
             newDiv.className="center-div";
-            var textBox = document.getElementById("person-name");
-            var pesonName = textBox.value;
-            newDiv.innerHTML  = pesonName;
+            var textBoxPersonName = document.getElementById("person-name");
+            var pesonName = textBoxPersonName.value;
+            newDiv.innerHTML  = "<p>Customer Name : " + pesonName+"</p>";
+
+            var textBoxPersonAge = document.getElementById("person-age");
+            var pesonAge = textBoxPersonAge.value;
+            newDiv.innerHTML += "<p>Customer Age : " + pesonAge+"</p>";
+
+
+            var selectGender = document.getElementById("person-gender");
+            var pesonGender = selectGender.value;
+            newDiv.innerHTML += "<p>Customer Gender : " + pesonGender+"</p>";
 
             var mainDiv = document.getElementById("main-div");
             mainDiv.appendChild(newDiv);
 
-            textBox.value="";  
+            textBoxPersonName.value="";  
+            textBoxPersonAge.value="";  
             break;
     }
 }
