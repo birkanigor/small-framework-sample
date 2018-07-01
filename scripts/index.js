@@ -34,6 +34,8 @@ document.onclick=function(event){
             var pesonGender = selectGender.value;
             newDiv.innerHTML += "<p>Customer Gender : " + pesonGender+"</p>";
 
+            newDiv.innerHTML += "<div id='closediv'>x</div>";
+
             var mainDiv = document.getElementById("main-div");
             mainDiv.appendChild(newDiv);
 
